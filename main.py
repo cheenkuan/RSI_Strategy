@@ -30,9 +30,6 @@ class RSIAlgo(QCAlgorithm):
         self.rsiD = self.RSI(self.SYM, 14, MovingAverageType.Simple, Resolution.Daily)
         self.rsiH = self.RSI(self.SYM, 14, MovingAverageType.Simple, Resolution.Hour)
         
-        self.SetWarmUp(RSI_BUY_DAILY)
-
-
     def OnData(self, data):
         # check RSI status
         if self.rsiD.IsReady and self.rsiH.IsReady:
